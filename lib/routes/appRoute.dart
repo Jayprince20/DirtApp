@@ -3,6 +3,7 @@
 import 'package:dirtapp/routes/pageRoute.dart';
 import 'package:dirtapp/screens/Home/HomeBinding.dart';
 import 'package:dirtapp/screens/Home/HomePage.dart';
+import 'package:dirtapp/screens/Home/Onboarding.dart';
 import 'package:get/get.dart';
 
 class AppPages {
@@ -12,6 +13,11 @@ class AppPages {
       transition: Transition.fadeIn,
       page: () => HomePage(),
       binding: HomeBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.Onboarding,
+      transition: Transition.fadeIn,
+      page: () => Onboarding(),
     )
   ];
 }

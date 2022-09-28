@@ -7,7 +7,7 @@ void main() {
   runApp(
     GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: AppRoutes.HOME,
+      initialRoute: AppRoutes.Onboarding,
       defaultTransition: Transition.fade,
       getPages: AppPages.pages,
     ),

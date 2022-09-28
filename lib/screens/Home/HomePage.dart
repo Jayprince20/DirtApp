@@ -9,91 +9,155 @@ class HomePage extends GetWidget<HomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        actions: [Icon(Icons.air_rounded)],
+        title: Text("No Waste"),
+        centerTitle: true,
+        backgroundColor: Colors.green,
+      ),
       body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.all(20.0),
-          child: Column(
-            children: [
-              Image(
-                image: AssetImage("assets/images/background.png"),
-                height: 150,
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(left: 20, top: 30),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "Hello Again,",
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                    ),
+                  ),
+                  Text(
+                    "Welcome Back!",
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                    ),
+                  ),
+                  Text(
+                    "We are here to help our community grow",
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 14,
+                    ),
+                  ),
+                ],
               ),
-              SizedBox(
-                height: 20,
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(
+                left: 30,
+                bottom: 20,
               ),
-              Text(
-                "Hello Again,",
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 30,
-                ),
-              ),
-              Text(
-                "Welcome Back!",
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 30,
-                ),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Container(
-                padding: EdgeInsets.all(20),
+              child: Container(
                 width: 300,
-                height: 300,
+                height: 280,
                 decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20)),
+                  color: Colors.green,
+                  borderRadius: BorderRadius.circular(20),
+                ),
                 child: Column(
                   children: [
-                    Icon(
-                      Icons.recycling_rounded,
-                      size: 120,
-                      color: Colors.black,
-                    ),
-                    ElevatedButton(
-                      onPressed: () {
-                        Get.dialog(
-                          SingleChildScrollView(
-                            child: Dialog(
-                              child: Container(
-                                width: Get.width - 160,
-                                height: 560,
-                                child: Column(
-                                  children: [
-                                    Expanded(
-                                      child: PageView(
-                                        pageSnapping: true,
-                                        children: [
-                                          FormPageOne(),
-                                        ],
-                                        controller: controller.pageController,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
+                    Row(
+                      children: [
+                        Container(
+                          padding: EdgeInsets.only(left: 20, top: 40),
+                          width: 200,
+                          child: Text(
+                            "How can you signal a dirt?",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 23,
                             ),
                           ),
-                        );
-                      },
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.black,
-                      ),
-                      child: Text(
-                        "Signal".toUpperCase(),
-                        style: TextStyle(
+                        ),
+                        Icon(
+                          Icons.recycling_rounded,
+                          size: 80,
                           color: Colors.white,
-                          fontSize: 30,
+                        ),
+                      ],
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(
+                        top: 80,
+                      ),
+                      child: Container(
+                        width: 290,
+                        height: 100,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "Do  you want to signal dirt ? ",
+                              ),
+                              Row(
+                                children: [
+                                  Text("Okay, Click here: "),
+                                  ElevatedButton(
+                                    onPressed: () {
+                                      Get.dialog(
+                                        SingleChildScrollView(
+                                          child: Dialog(
+                                            child: Container(
+                                              width: Get.width - 160,
+                                              height: 560,
+                                              child: Column(
+                                                children: [
+                                                  Expanded(
+                                                    child: PageView(
+                                                      pageSnapping: true,
+                                                      children: [
+                                                        FormPageOne(),
+                                                      ],
+                                                      controller: controller
+                                                          .pageController,
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      );
+                                    },
+                                    style: ElevatedButton.styleFrom(
+                                      backgroundColor: Colors.black,
+                                    ),
+                                    child: Text(
+                                      "Signal".toUpperCase(),
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 20,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              )
+                            ],
+                          ),
                         ),
                       ),
-                    ),
+                    )
                   ],
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
